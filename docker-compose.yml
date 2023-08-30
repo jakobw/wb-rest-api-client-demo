@@ -1,0 +1,8 @@
+services:
+  node:
+    build:
+     context: .
+    volumes:
+      - '~/.npm:/.npm'
+      - './:/app'
+    working_dir: /app

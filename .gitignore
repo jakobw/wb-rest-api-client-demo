@@ -1,0 +1,4 @@
+openapi.json
+openapi-dereferenced.json
+node_modules/
+api-client/

@@ -1,0 +1,15 @@
+{
+  "name": "wb-rest-api-client-demo",
+  "version": "1.0.0",
+  "description": "Wikibase REST API client demo",
+  "scripts": {
+    "hello-api": "ts-node hello-api.ts"
+  },
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/request": "^2.48.8",
+    "json-dereference-cli": "^0.1.2",
+    "request": "^2.88.2",
+    "ts-node": "^10.9.1"
+  }
+}
