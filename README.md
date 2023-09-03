@@ -1,6 +1,6 @@
 # Wikibase REST API client demo
 
-This repo demonstrates how to generate and use a TypeScript API client based on [the Wikibase REST API's OpenAPI document](https://doc.wikimedia.org/Wikibase/master/js/rest-api/). The automatically generated API client features well-named methods and parameter and return type hints. Here is an example:
+This repo demonstrates how to generate and use a TypeScript API client based on [the Wikibase REST API's OpenAPI document](https://doc.wikimedia.org/Wikibase/master/js/rest-api/). The automatically generated API client features well-named methods, as well as parameter and return type hints. Here is an example:
 ```typescript
 const itemId = 'Q11';
 // get a label
