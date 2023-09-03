@@ -13,7 +13,7 @@ labelsApi.replaceItemLabel( itemId, 'en', { label: 'hello API' } );
 // get all statements of this item
 statementsApi.getItemStatements( itemId )
     .then( response => console.log( response.body ) );
-// get all statements of this item using P31 as the property
+// get all statements of this item that use P31 as the property
 statementsApi.getItemStatements( itemId, 'P31' )
     .then( response => console.log( response.body ) );
 ```
