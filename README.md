@@ -21,11 +21,10 @@ statementsApi.getItemStatements( itemId, 'P31' )
 ## Installation
 
 ### With docker
-* build the docker image: `docker-compose build --build-arg UID=$(id -u) --build-arg GID=$(id -g) node`
-* install dependencies: `docker-compose run --rm node npm i`
+* install dependencies: `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:20 npm i`
 * download and save the WB REST API OpenAPI document as `openapi.json` in this directory: `curl -O https://doc.wikimedia.org/Wikibase/master/js/rest-api/openapi.json`
-* to generate the client run the following two commands: 
-  * `docker-compose run --rm node npx json-dereference-cli json-dereference -s openapi.json -o openapi-dereferenced.json`
+* to generate the client run the following two commands:
+  * `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:20 npx json-dereference-cli json-dereference -s openapi.json -o openapi-dereferenced.json`
   * ```
     docker run --rm \
       -v $PWD:/local openapitools/openapi-generator-cli generate \
@@ -33,7 +32,7 @@ statementsApi.getItemStatements( itemId, 'P31' )
       -g typescript-node \
       -o /local/api-client
     ```
-* you can now run the example: `docker-compose run --rm node npm run hello-api`
+* you can now run the example: `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:20 npm run hello-api`
 
 ### Without docker
 This requires Node.js (version >= 16) and Java (version >= 11) to be installed.
