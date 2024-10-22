@@ -21,12 +21,13 @@ statementsApi.getItemStatements( itemId, 'P31' )
 ## Installation
 
 ### With docker
-* install dependencies: `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:20 npm i`
+* install dependencies: `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:20 npm i`
 * download and save the WB REST API OpenAPI document as `openapi.json` in this directory: `curl -O https://doc.wikimedia.org/Wikibase/master/js/rest-api/openapi.json`
 * to generate the client run the following two commands:
-  * `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app node:20 npx json-dereference-cli json-dereference -s openapi.json -o openapi-dereferenced.json`
+  * `docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app --user $(id -u):$(id -g) node:20 npx json-dereference-cli json-dereference -s openapi.json -o openapi-dereferenced.json`
   * ```
     docker run --rm \
+      --user $(id -u):$(id -g) \
       -v $PWD:/local openapitools/openapi-generator-cli generate \
       -i /local/openapi-dereferenced.json \
       -g typescript-node \
